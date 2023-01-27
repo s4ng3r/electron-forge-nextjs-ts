@@ -15,7 +15,7 @@ class ElectronApplication {
     const mainWindow = new BrowserWindow({
       height: 600,
       width: 800,
-      frame: false,
+      //frame: false,
       webPreferences: {
         preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       },
@@ -32,6 +32,8 @@ class ElectronApplication {
     if (require("electron-squirrel-startup")) {
       this.app.quit();
     }
+
+    this.app.on('ready', this.createWindow);
 
     this.app.on('window-all-closed', () => {
       if (process.platform !== 'darwin') {
