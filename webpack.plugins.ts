@@ -5,6 +5,10 @@ const ForkTsCheckerWebpackPlugin: typeof IForkTsCheckerWebpackPlugin = require('
 
 export const plugins = [
   new ForkTsCheckerWebpackPlugin({
+    typescript: {
+      context: __dirname,
+      configFile: './src/electron-src/tsconfig.json',
+    },
     logger: 'webpack-infrastructure',
   }),
 ];

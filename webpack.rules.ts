@@ -25,6 +25,8 @@ export const rules: Required<ModuleOptions>['rules'] = [
       loader: 'ts-loader',
       options: {
         transpileOnly: true,
+        context: __dirname,
+        configFile: 'src/electron-src/tsconfig.json',
       },
     },
   },
